@@ -1,0 +1,65 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build outputs
+/dist
+/build
+/out
+.cache/
+
+# React-specific files
+*.cache
+*.env.local
+public/static/
+public/asset-manifest.json
+public/manifest.json
+public/service-worker.js
+public/robots.txt
+
+# Next.js (if applicable)
+.next/
+.vercel/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.ldb
+
+# IDE/Editor files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# System files
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS-generated files
+*.lock
