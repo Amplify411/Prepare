@@ -15,14 +15,13 @@ const MONGO_URL= process.env.MONGO_URL
 
 const db= new pg.Client(
     {
-      user:"postgres",
-      host:"localhost",
-      database:"prepare",
-      password:"amplify4411",
-      port:5432
+      user:process.env.USER,
+      host:process.env.HOST,
+      database:process.env.DATABASE,
+      password:process.env.PASSWORD,
+      port:process.env.POSTPORT
     }
 );
-
 app.listen(PORT, () => console.log(`Connected to port ${PORT}`));
 
 app.get('/mongo-post', async (req, res) => {
