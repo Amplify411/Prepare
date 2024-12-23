@@ -26,8 +26,8 @@ const db= new pg.Client(
 app.listen(PORT, () => console.log(`Connected to port ${PORT}`));
 
 app.get('/mongo-post', async (req, res) => {
-    db.connect()
-    mongoose.connect(MONGO_URL)
+    await db.connect()
+    await mongoose.connect(MONGO_URL)
     const allUsers = await User.find();
 
     //Code with Lodash
@@ -43,12 +43,12 @@ app.get('/mongo-post', async (req, res) => {
         allUsers[i].contact=allUsers[i].contact[0].toUpperCase()+allUsers[i].contact.slice(1);
         }
         */} 
-    mongoose.disconnect();
+        await mongoose.disconnect();
     
     //Code with Lodash
     _.forEach(allUsers,async(user)=>{
         await db.query("INSERT INTO postgresuser (name,age,contact) VALUES ($1,$2,$3)",[user.name,user.age,user.contact])
     })
-    db.end();
+    await db.end();
     res.json({allUsers})
 });
